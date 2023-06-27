@@ -1,0 +1,96 @@
+*ddu-source-zenn_dev.txt*                          zenn.dev source for ddu.vim
+
+Author: kyoh86 <me@kyoh86.dev>
+License: MIT License
+
+
+==============================================================================
+CONTENTS                                        *ddu-source-zenn_dev-contents*
+
+Introduction                                 |ddu-source-zenn_dev-introdution|
+Install                                      |ddu-source-zenn_dev-install|
+Examples                                     |ddu-source-zenn_dev-examples|
+Params                                       |ddu-source-zenn_dev-params|
+Actions                                      |ddu-source-zenn_dev-actions|
+About                                        |ddu-source-zenn_dev-about|
+
+
+==============================================================================
+INTRODUCTION                                 *ddu-source-zenn_dev-introdution*
+
+ddu.vim source collects articles in the repository for zenn.dev.
+
+
+==============================================================================
+INSTALL                                          *ddu-source-zenn_dev-install*
+
+It depends on "zenn-cli", "|ddu|.vim", "|denops.vim|" and "|ddu-kind-file|".
+
+https://zenn.dev/zenn/articles/zenn-cli-guide
+https://github.com/Shougo/ddu.vim
+https://github.com/vim-denops/denops.vim
+https://github.com/Shougo/ddu-kind-file
+
+
+==============================================================================
+EXAMPLES                                        *ddu-source-zenn_dev-examples*
+
+>
+	" Use zenn.dev articles source.
+	call ddu#start({
+	    \     'sources': [{
+	    \         'name': 'zenn_dev_article',
+	    \         'params': {
+	    \             'cwd': getcwd(),
+	    \         }
+	    \     }],
+	    \     'kindOptions': { 'file': { 'defaultAction': 'open' } }
+	    \ })
+<
+
+
+>
+	" Search articles and browse it in zenn.dev.
+	call ddu#start({
+	    \     'sources': [{
+	    \         'name': 'zenn_dev_article',
+	    \         'params': {
+	    \             'cwd': getcwd(),
+	    \             'urlPrefix': 'https://zenn.dev/kyoh86',
+	    \         }
+	    \     }],
+	    \     'kindOptions': { 'file': { 'defaultAction': 'browse' } }
+	    \ })
+<
+
+
+==============================================================================
+PARAMS                                            *ddu-source-zenn_dev-params*
+
+cwd	
+	string (required)
+	Target directory.
+
+
+urlPrefix
+	URL prefix to show the article
+
+	Default: "http://localhost:8000"
+
+
+useNpx	
+	boolean
+	Call zenn-cli via npx.
+
+	Default: |v:true|
+
+
+==============================================================================
+ACTIONS                                          *ddu-source-zenn_dev-actions*
+
+This source uses |ddu-kind-file| actions.
+You can see their actions in |ddu-kind-file-actions|.
+
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:
