@@ -11,7 +11,19 @@ import {
   JSONValue,
 } from "https://deno.land/x/jsonlines@v1.2.2/mod.ts";
 
-import { EchomsgStream } from "../util/msg_stream.ts";
+export class EchomsgStream extends WritableStream<string> {
+  #cmd = "echomsg";
+  constructor(denops: Denops, source: string, errorMsg: boolean = false) {
+    super({
+      write: async (chunk, _controller) => {
+        await denops.cmd(`${this.#cmd} '[${source}]' chunk`, { chunk });
+      },
+    });
+    if (errorMsg) {
+      this.#cmd = "echoerr";
+    }
+  }
+}
 
 type ActionData = FileActionData;
 
