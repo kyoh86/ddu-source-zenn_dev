@@ -86,6 +86,27 @@ useNpx
 
 
 ==============================================================================
+COLUMNS                                          *ddu-source-zenn_dev-columns*
+
+zenn_dev_emoji
+	Shows Emoji of articles.
+
+zenn_dev_slug
+	Shows Slug of articles.
+
+zenn_dev_title
+	Shows Title of articles.
+
+
+==============================================================================
+COLUMN PARAMS                              *ddu-source-zenn_dev-column-params*
+
+limitLength
+	number; Max length of the column.
+
+	default: 0
+
+==============================================================================
 ACTIONS                                          *ddu-source-zenn_dev-actions*
 
 This source uses |ddu-kind-file| actions.
