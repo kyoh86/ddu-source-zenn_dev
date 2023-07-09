@@ -6,11 +6,14 @@ import { GetTextResult } from "https://deno.land/x/ddu_vim@v3.4.1/base/column.ts
 import { Denops, fn } from "https://deno.land/x/ddu_vim@v3.4.1/deps.ts";
 import { ActionData } from "./types.ts";
 
-type Params = Record<never, never>;
+type Params = {
+  limitLength: number;
+};
 
 export abstract class ZennBaseColumn extends BaseColumn<Params> {
+  #width = 1;
+
   abstract getAttr({}: ActionData): string;
-  abstract getName(): string;
 
   override async getLength(args: {
     denops: Denops;
@@ -24,7 +27,11 @@ export abstract class ZennBaseColumn extends BaseColumn<Params> {
         return await fn.strwidth(args.denops, this.getAttr(action));
       },
     ));
-    const width = Math.max(...widths);
+    let width = Math.max(...widths, this.#width);
+    if (args.columnParams.limitLength) {
+      width = Math.min(width, args.columnParams.limitLength);
+    }
+    this.#width = width;
     return Promise.resolve(width);
   }
 
@@ -36,12 +43,14 @@ export abstract class ZennBaseColumn extends BaseColumn<Params> {
     item: DduItem;
   }): Promise<GetTextResult> {
     const action = args.item?.action as ActionData;
+    const text = this.getAttr(action);
+    const padding = " ".repeat(Math.max(this.#width - text.length, 0));
     return Promise.resolve({
-      text: this.getAttr(action),
+      text: text + padding,
     });
   }
 
   override params(): Params {
-    return {};
+    return { limitLength: 0 };
   }
 }

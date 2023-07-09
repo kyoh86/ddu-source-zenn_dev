@@ -73,7 +73,7 @@ async function* walk(cwd: string, urlPrefix: string, signal: AbortSignal) {
       continue;
     }
     const n = chunk.push({
-      word: `${attr.slug}:    ${attr.emoji} ${attr.title}`,
+      word: `${attr.slug}: ${attr.emoji} ${attr.title}`,
       action: {
         ...attr,
         path: abspath,
