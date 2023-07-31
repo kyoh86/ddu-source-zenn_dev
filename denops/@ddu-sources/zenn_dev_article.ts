@@ -10,6 +10,7 @@ import { ActionData, Frontmatter } from "../ddu-zenn_dev/types.ts";
 
 type Params = {
   urlPrefix: string;
+  slug: boolean;
 };
 
 export class Source extends BaseSource<Params> {
@@ -21,13 +22,14 @@ export class Source extends BaseSource<Params> {
     const abort = new AbortController();
     const path = args.sourceOptions.path;
     const urlPrefix = args.sourceParams.urlPrefix;
+    const slug = args.sourceParams.slug;
 
     return new ReadableStream({
       async start(controller) {
         const cwd = (path && path.length)
           ? treePath2Filename(path)
           : (await fn.getcwd(args.denops));
-        const iter = walk(join(cwd, "articles"), urlPrefix, abort.signal);
+        const iter = walk(join(cwd, "articles"), urlPrefix, abort.signal, slug);
         try {
           for await (const chunk of iter) {
             controller.enqueue(chunk);
@@ -49,11 +51,19 @@ export class Source extends BaseSource<Params> {
   }
 
   override params(): Params {
-    return { urlPrefix: "http://localhost:8000/" };
+    return {
+      urlPrefix: "http://localhost:8000/",
+      slug: true,
+    };
   }
 }
 
-async function* walk(cwd: string, urlPrefix: string, signal: AbortSignal) {
+async function* walk(
+  cwd: string,
+  urlPrefix: string,
+  signal: AbortSignal,
+  slug: boolean,
+) {
   let chunk: Item<ActionData>[] = [];
   for await (const entry of abortable(Deno.readDir(cwd), signal)) {
     if (!/\.md$/.test(entry.name)) {
@@ -72,8 +82,9 @@ async function* walk(cwd: string, urlPrefix: string, signal: AbortSignal) {
       console.log(`cannot get front matter ${entry.name}`);
       continue;
     }
+    const prefix = slug ? attr.slug + ": " : "";
     const n = chunk.push({
-      word: `${attr.slug}: ${attr.emoji} ${attr.title}`,
+      word: `${prefix}${attr.emoji}, ${attr.title}`,
       action: {
         ...attr,
         path: abspath,
