@@ -67,12 +67,14 @@ EXAMPLES                                        *ddu-source-zenn_dev-examples*
 PARAMS                                            *ddu-source-zenn_dev-params*
 
 urlPrefix
+	(string)
 	URL prefix to show the article
 
 	Default: "http://localhost:8000"
 
 
 slug
+	(boolean)
 	Whether to display the zenn slug (unique ID of the article) or not.
 
 	Default: |v:true|
@@ -95,9 +97,10 @@ zenn_dev_title
 COLUMN PARAMS                              *ddu-source-zenn_dev-column-params*
 
 limitLength
-	number; Max length of the column.
+	(number)
+	Max length of the column.
 
-	default: 0
+	Default: 0
 
 ==============================================================================
 ACTIONS                                          *ddu-source-zenn_dev-actions*
