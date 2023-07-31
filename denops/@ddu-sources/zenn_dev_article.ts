@@ -84,7 +84,7 @@ async function* walk(
     }
     const prefix = slug ? attr.slug + ": " : "";
     const n = chunk.push({
-      word: `${prefix}${attr.emoji}, ${attr.title}`,
+      word: `${prefix}${attr.emoji} ${attr.title}`,
       action: {
         ...attr,
         path: abspath,
