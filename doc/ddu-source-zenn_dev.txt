@@ -55,7 +55,6 @@ EXAMPLES                                        *ddu-source-zenn_dev-examples*
 	    \     'sources': [{
 	    \         'name': 'zenn_dev_article',
 	    \         'params': {
-	    \             'cwd': getcwd(),
 	    \             'urlPrefix': 'https://zenn.dev/kyoh86',
 	    \         }
 	    \     }],
@@ -67,22 +66,10 @@ EXAMPLES                                        *ddu-source-zenn_dev-examples*
 ==============================================================================
 PARAMS                                            *ddu-source-zenn_dev-params*
 
-cwd	
-	string (required)
-	Target directory.
-
-
 urlPrefix
 	URL prefix to show the article
 
 	Default: "http://localhost:8000"
-
-
-useNpx	
-	boolean
-	Call zenn-cli via npx.
-
-	Default: |v:true|
 
 
 ==============================================================================
