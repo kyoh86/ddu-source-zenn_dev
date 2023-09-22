@@ -14,7 +14,7 @@ type Params = {
 };
 
 export class Source extends BaseSource<Params> {
-  kind = "file";
+  kind = "zenn_dev_article";
 
   override gather(
     args: GatherArguments<Params>,
