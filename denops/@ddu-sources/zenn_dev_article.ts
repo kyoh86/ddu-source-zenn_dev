@@ -82,12 +82,31 @@ async function* walk(
       console.log(`cannot get front matter ${entry.name}`);
       continue;
     }
-    const prefix = slug ? attr.slug + ": " : "";
+
+    const command = new Deno.Command("git", {
+      args: [
+        "--no-pager",
+        "log",
+        "-1",
+        "--format=%cs",
+        "--",
+        abspath,
+      ],
+      cwd,
+      stdout: "piped",
+    });
+    const output = command.outputSync();
+    const date = (output.success)
+      ? new TextDecoder().decode(output.stdout).trimEnd()
+      : "";
+
+    const prefix = date + " " + (slug ? attr.slug + ": " : "");
     const n = chunk.push({
       word: `${prefix}${attr.emoji} ${attr.title}`,
       action: {
         ...attr,
         path: abspath,
+        date,
         url: join(
           urlPrefix,
           "articles",
