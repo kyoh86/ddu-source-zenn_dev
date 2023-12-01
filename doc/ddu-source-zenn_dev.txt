@@ -44,7 +44,9 @@ EXAMPLES                                        *ddu-source-zenn_dev-examples*
 	    \             'cwd': getcwd(),
 	    \         }
 	    \     }],
-	    \     'kindOptions': { 'file': { 'defaultAction': 'open' } }
+	    \     'kindOptions': {
+	    \         'zenn_dev_article': { 'defaultAction': 'open' }
+	    \     }
 	    \ })
 <
 
@@ -58,7 +60,9 @@ EXAMPLES                                        *ddu-source-zenn_dev-examples*
 	    \             'urlPrefix': 'https://zenn.dev/kyoh86',
 	    \         }
 	    \     }],
-	    \     'kindOptions': { 'file': { 'defaultAction': 'browse' } }
+	    \     'kindOptions': {
+	    \         'zenn_dev_article': { 'defaultAction': 'browse' }
+	    \     }
 	    \ })
 <
 
