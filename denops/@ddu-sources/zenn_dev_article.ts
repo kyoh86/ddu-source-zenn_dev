@@ -1,11 +1,11 @@
-import type { GatherArguments } from "https://deno.land/x/ddu_vim@v3.6.0/base/source.ts";
-import { BaseSource, Item } from "https://deno.land/x/ddu_vim@v3.6.0/types.ts";
-import { fn } from "https://deno.land/x/ddu_vim@v3.6.0/deps.ts";
-import { join } from "https://deno.land/std@0.206.0/path/mod.ts";
-import { basename } from "https://deno.land/std@0.206.0/path/mod.ts";
-import { extract } from "https://deno.land/std@0.206.0/front_matter/any.ts";
-import { abortable } from "https://deno.land/std@0.206.0/async/mod.ts";
-import { treePath2Filename } from "https://deno.land/x/ddu_vim@v3.6.0/utils.ts";
+import type { GatherArguments } from "https://deno.land/x/ddu_vim@v3.8.1/base/source.ts";
+import { BaseSource, Item } from "https://deno.land/x/ddu_vim@v3.8.1/types.ts";
+import { fn } from "https://deno.land/x/ddu_vim@v3.8.1/deps.ts";
+import { join } from "https://deno.land/std@0.208.0/path/mod.ts";
+import { basename } from "https://deno.land/std@0.208.0/path/mod.ts";
+import { extract } from "https://deno.land/std@0.208.0/front_matter/any.ts";
+import { abortable } from "https://deno.land/std@0.208.0/async/mod.ts";
+import { treePath2Filename } from "https://deno.land/x/ddu_vim@v3.8.1/utils.ts";
 import { ActionData, Frontmatter } from "../ddu-zenn_dev/types.ts";
 
 type Params = {
