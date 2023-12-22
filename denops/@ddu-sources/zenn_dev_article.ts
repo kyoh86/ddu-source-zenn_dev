@@ -1,10 +1,10 @@
 import type { GatherArguments } from "https://deno.land/x/ddu_vim@v3.8.1/base/source.ts";
 import { BaseSource, Item } from "https://deno.land/x/ddu_vim@v3.8.1/types.ts";
 import { fn } from "https://deno.land/x/ddu_vim@v3.8.1/deps.ts";
-import { join } from "https://deno.land/std@0.209.0/path/mod.ts";
-import { basename } from "https://deno.land/std@0.209.0/path/mod.ts";
-import { extract } from "https://deno.land/std@0.209.0/front_matter/any.ts";
-import { abortable } from "https://deno.land/std@0.209.0/async/mod.ts";
+import { join } from "https://deno.land/std@0.210.0/path/mod.ts";
+import { basename } from "https://deno.land/std@0.210.0/path/mod.ts";
+import { extract } from "https://deno.land/std@0.210.0/front_matter/any.ts";
+import { abortable } from "https://deno.land/std@0.210.0/async/mod.ts";
 import { treePath2Filename } from "https://deno.land/x/ddu_vim@v3.8.1/utils.ts";
 import { ActionData, Frontmatter } from "../ddu-zenn_dev/types.ts";
 
