@@ -107,11 +107,7 @@ async function* walk(
         ...attr,
         path: abspath,
         date,
-        url: join(
-          urlPrefix,
-          "articles",
-          attr.slug,
-        ),
+        url: urlPrefix + join("articles", attr.slug),
       },
     });
     if (n >= 1000) {
