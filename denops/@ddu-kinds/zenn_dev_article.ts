@@ -1,6 +1,14 @@
-import { BaseKind } from "https://deno.land/x/ddu_vim@v3.10.0/types.ts";
+import {
+  ActionArguments,
+  ActionFlags,
+  BaseKind,
+} from "https://deno.land/x/ddu_vim@v3.10.2/types.ts";
 import { FileActions } from "https://deno.land/x/ddu_kind_file@v0.7.1/file.ts";
-import { UrlActions } from "https://denopkg.com/4513ECHO/ddu-kind-url@master/denops/@ddu-kinds/url.ts";
+import {
+  ensure,
+  is,
+  maybe,
+} from "https://deno.land/x/unknownutil@v3.14.1/mod.ts";
 
 type Params = {
   trashCommand: string[];
@@ -10,7 +18,25 @@ type Params = {
 export class Kind extends BaseKind<Params> {
   actions = {
     ...FileActions,
-    browse: UrlActions.browse,
+    browse: async (
+      { denops, items, actionParams }: ActionArguments<Params>,
+    ) => {
+      const params = ensure(actionParams, is.Record);
+      const opener = maybe(params.opener, is.String);
+      for (const item of items) {
+        const action = item?.action as { url: string };
+        await denops.call(
+          "denops#notify",
+          "ddu-kind-zenn_dev_article",
+          "open",
+          [
+            action.url,
+            opener,
+          ],
+        );
+      }
+      return ActionFlags.None;
+    },
   };
 
   override params(): Params {

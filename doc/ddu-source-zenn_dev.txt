@@ -112,6 +112,13 @@ ACTIONS                                          *ddu-source-zenn_dev-actions*
 This source uses |ddu-kind-file| actions.
 You can see their actions in |ddu-kind-file-actions|.
 
+And you can call "browse":
+	Open the article in your browser.
+	Parameters:
+		opener
+			An external command name to open it.
+			e.g. "xdg-open", "wslview", etc.
+
 
 ==============================================================================
 vim:tw=78:ts=8:ft=help:norl:noet:fen:
