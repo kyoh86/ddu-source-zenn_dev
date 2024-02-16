@@ -8,7 +8,7 @@ import {
   ensure,
   is,
   maybe,
-} from "https://deno.land/x/unknownutil@v3.16.1/mod.ts";
+} from "https://deno.land/x/unknownutil@v3.16.3/mod.ts";
 
 type Params = {
   trashCommand: string[];
