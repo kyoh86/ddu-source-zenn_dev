@@ -1,9 +1,9 @@
 import {
   BaseColumn,
   DduItem,
-} from "https://deno.land/x/ddu_vim@v3.10.2/types.ts";
-import { GetTextResult } from "https://deno.land/x/ddu_vim@v3.10.2/base/column.ts";
-import { Denops, fn } from "https://deno.land/x/ddu_vim@v3.10.2/deps.ts";
+} from "https://deno.land/x/ddu_vim@v3.10.3/types.ts";
+import { GetTextResult } from "https://deno.land/x/ddu_vim@v3.10.3/base/column.ts";
+import { Denops, fn } from "https://deno.land/x/ddu_vim@v3.10.3/deps.ts";
 import { ActionData } from "./types.ts";
 
 type Params = {
