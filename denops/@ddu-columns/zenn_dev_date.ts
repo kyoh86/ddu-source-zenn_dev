@@ -5,4 +5,7 @@ export class Column extends ZennBaseColumn {
   getAttr({ date }: ActionData): string {
     return date;
   }
+  getBaseText(): string {
+    return "yyyy-mm-dd";
+  }
 }
