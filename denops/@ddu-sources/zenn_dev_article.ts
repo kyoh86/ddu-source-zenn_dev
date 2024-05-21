@@ -2,7 +2,7 @@ import type { GatherArguments } from "https://deno.land/x/ddu_vim@v4.1.0/base/so
 import { BaseSource, Item } from "https://deno.land/x/ddu_vim@v4.1.0/types.ts";
 import { fn } from "https://deno.land/x/ddu_vim@v4.1.0/deps.ts";
 import { join } from "https://deno.land/std@0.224.0/path/mod.ts";
-import { basename } from "https://deno.land/std@0.223.0/path/mod.ts";
+import { basename } from "https://deno.land/std@0.224.0/path/mod.ts";
 import { extract } from "https://deno.land/std@0.224.0/front_matter/any.ts";
 import { abortable } from "https://deno.land/std@0.224.0/async/mod.ts";
 import { treePath2Filename } from "https://deno.land/x/ddu_vim@v4.1.0/utils.ts";
