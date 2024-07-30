@@ -1,12 +1,12 @@
-import type { GatherArguments } from "https://deno.land/x/ddu_vim@v4.1.1/base/source.ts";
-import { BaseSource, Item } from "https://deno.land/x/ddu_vim@v4.1.1/types.ts";
-import { fn } from "https://deno.land/x/ddu_vim@v4.1.1/deps.ts";
-import { join } from "https://deno.land/std@0.224.0/path/mod.ts";
-import { basename } from "https://deno.land/std@0.224.0/path/mod.ts";
-import { extract } from "https://deno.land/std@0.224.0/front_matter/any.ts";
-import { abortable } from "https://deno.land/std@0.224.0/async/mod.ts";
-import { treePath2Filename } from "https://deno.land/x/ddu_vim@v4.1.1/utils.ts";
-import { ActionData, Frontmatter } from "../ddu-zenn_dev/types.ts";
+import type { GatherArguments } from "jsr:@shougo/ddu-vim@5.0.0/source";
+import { BaseSource, type Item } from "jsr:@shougo/ddu-vim@5.0.0/types";
+import * as fn from "jsr:@denops/std@7.0.1/function";
+import { join } from "jsr:@std/path@1.0.2";
+import { basename } from "jsr:@std/path@1.0.2";
+import { extractYaml } from "jsr:@std/front-matter@1.0.0";
+import { abortable } from "jsr:@std/async@1.0.1";
+import { treePath2Filename } from "jsr:@shougo/ddu-vim@5.0.0/utils";
+import type { ActionData, Frontmatter } from "../ddu-zenn_dev/types.ts";
 
 type Params = {
   urlPrefix: string;
@@ -124,7 +124,7 @@ async function readFrontMatter(path: string) {
   try {
     const text = await Deno.readTextFile(path);
     const slug = basename(path).replace(/\.md$/, "");
-    return { ...extract<Frontmatter>(text).attrs, slug };
+    return { ...extractYaml<Frontmatter>(text).attrs, slug };
   } catch {
     return undefined;
   }

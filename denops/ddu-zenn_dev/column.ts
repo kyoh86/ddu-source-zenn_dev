@@ -1,10 +1,8 @@
-import {
-  BaseColumn,
-  DduItem,
-} from "https://deno.land/x/ddu_vim@v4.1.1/types.ts";
-import { GetTextResult } from "https://deno.land/x/ddu_vim@v4.1.1/base/column.ts";
-import { Denops, fn } from "https://deno.land/x/ddu_vim@v4.1.1/deps.ts";
-import { ActionData } from "./types.ts";
+import { BaseColumn, type DduItem } from "jsr:@shougo/ddu-vim@5.0.0/types";
+import type { GetTextResult } from "jsr:@shougo/ddu-vim@5.0.0/column";
+import type { Denops } from "jsr:@denops/std@7.0.1";
+import * as fn from "jsr:@denops/std@7.0.1/function";
+import type { ActionData } from "./types.ts";
 
 type Params = {
   limitLength: number;

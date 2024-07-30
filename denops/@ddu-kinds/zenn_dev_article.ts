@@ -1,14 +1,10 @@
 import {
-  ActionArguments,
+  type ActionArguments,
   ActionFlags,
   BaseKind,
-} from "https://deno.land/x/ddu_vim@v4.1.1/types.ts";
-import { FileActions } from "https://deno.land/x/ddu_kind_file@v0.7.1/file.ts";
-import {
-  ensure,
-  is,
-  maybe,
-} from "https://deno.land/x/unknownutil@v3.18.1/mod.ts";
+} from "jsr:@shougo/ddu-vim@5.0.0/types";
+import { FileActions } from "jsr:@shougo/ddu-kind-file@0.8.0";
+import { ensure, is, maybe } from "jsr:@core/unknownutil@3.18.1";
 
 type Params = {
   trashCommand: string[];

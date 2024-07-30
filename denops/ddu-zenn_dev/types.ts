@@ -1,4 +1,4 @@
-import { ActionData as FileActionData } from "https://deno.land/x/ddu_kind_file@v0.7.1/file.ts";
+import type { ActionData as FileActionData } from "jsr:@shougo/ddu-kind-file@0.8.0";
 
 export type Frontmatter = { title: string; emoji: string };
 export type PostAttribute =
