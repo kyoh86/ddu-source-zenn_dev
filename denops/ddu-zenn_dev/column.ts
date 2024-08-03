@@ -1,7 +1,7 @@
-import { BaseColumn, type DduItem } from "jsr:@shougo/ddu-vim@5.0.0/types";
-import type { GetTextResult } from "jsr:@shougo/ddu-vim@5.0.0/column";
-import type { Denops } from "jsr:@denops/std@7.0.1";
-import * as fn from "jsr:@denops/std@7.0.1/function";
+import { BaseColumn, type DduItem } from "jsr:@shougo/ddu-vim@~5.0.0/types";
+import type { GetTextResult } from "jsr:@shougo/ddu-vim@~5.0.0/column";
+import type { Denops } from "jsr:@denops/std@~7.0.1";
+import * as fn from "jsr:@denops/std@~7.0.1/function";
 import type { ActionData } from "./types.ts";
 
 type Params = {

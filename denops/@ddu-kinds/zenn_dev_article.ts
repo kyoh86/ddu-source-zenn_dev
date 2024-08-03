@@ -2,9 +2,9 @@ import {
   type ActionArguments,
   ActionFlags,
   BaseKind,
-} from "jsr:@shougo/ddu-vim@5.0.0/types";
-import { FileActions } from "jsr:@shougo/ddu-kind-file@0.8.0";
-import { ensure, is, maybe } from "jsr:@core/unknownutil@3.18.1";
+} from "jsr:@shougo/ddu-vim@~5.0.0/types";
+import { FileActions } from "jsr:@shougo/ddu-kind-file@~0.8.0";
+import { ensure, is, maybe } from "jsr:@core/unknownutil@~3.18.1";
 
 type Params = {
   trashCommand: string[];
