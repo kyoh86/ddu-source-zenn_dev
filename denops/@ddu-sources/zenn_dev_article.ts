@@ -1,11 +1,12 @@
-import type { GatherArguments } from "jsr:@shougo/ddu-vim@~5.0.0/source";
-import { BaseSource, type Item } from "jsr:@shougo/ddu-vim@~5.0.0/types";
-import * as fn from "jsr:@denops/std@~7.0.1/function";
+import type { GatherArguments } from "jsr:@shougo/ddu-vim@~6.0.0/source";
+import type { Item } from "jsr:@shougo/ddu-vim@~6.0.0/types";
+import { BaseSource } from "jsr:@shougo/ddu-vim@~6.0.0/source";
+import * as fn from "jsr:@denops/std@~7.1.0/function";
 import { join } from "jsr:@std/path@~1.0.2";
 import { basename } from "jsr:@std/path@~1.0.2";
 import { extractYaml } from "jsr:@std/front-matter@~1.0.0";
 import { abortable } from "jsr:@std/async@~1.0.1";
-import { treePath2Filename } from "jsr:@shougo/ddu-vim@~5.0.0/utils";
+import { treePath2Filename } from "jsr:@shougo/ddu-vim@~6.0.0/utils";
 import type { ActionData, Frontmatter } from "../ddu-zenn_dev/types.ts";
 
 type Params = {
