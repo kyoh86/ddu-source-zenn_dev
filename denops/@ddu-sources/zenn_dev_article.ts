@@ -1,12 +1,12 @@
-import type { GatherArguments } from "jsr:@shougo/ddu-vim@~6.2.0/source";
-import type { Item } from "jsr:@shougo/ddu-vim@~6.2.0/types";
-import { BaseSource } from "jsr:@shougo/ddu-vim@~6.2.0/source";
+import type { GatherArguments } from "jsr:@shougo/ddu-vim@~6.4.0/source";
+import type { Item } from "jsr:@shougo/ddu-vim@~6.4.0/types";
+import { BaseSource } from "jsr:@shougo/ddu-vim@~6.4.0/source";
 import * as fn from "jsr:@denops/std@~7.3.0/function";
 import { join } from "jsr:@std/path@~1.0.2";
 import { basename } from "jsr:@std/path@~1.0.2";
 import { extractYaml } from "jsr:@std/front-matter@~1.0.0";
 import { abortable } from "jsr:@std/async@~1.0.1";
-import { treePath2Filename } from "jsr:@shougo/ddu-vim@~6.2.0/utils";
+import { treePath2Filename } from "jsr:@shougo/ddu-vim@~6.4.0/utils";
 import type { ActionData, Frontmatter } from "../ddu-zenn_dev/types.ts";
 
 type Params = {
@@ -15,7 +15,7 @@ type Params = {
 };
 
 export class Source extends BaseSource<Params> {
-  kind = "zenn_dev_article";
+  override kind = "zenn_dev_article";
 
   override gather(
     args: GatherArguments<Params>,
