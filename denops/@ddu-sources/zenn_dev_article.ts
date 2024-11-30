@@ -1,7 +1,7 @@
 import type { GatherArguments } from "jsr:@shougo/ddu-vim@~7.0.0/source";
 import type { Item } from "jsr:@shougo/ddu-vim@~7.0.0/types";
 import { BaseSource } from "jsr:@shougo/ddu-vim@~7.0.0/source";
-import * as fn from "jsr:@denops/std@~7.3.0/function";
+import * as fn from "jsr:@denops/std@~7.4.0/function";
 import { join } from "jsr:@std/path@~1.0.2";
 import { basename } from "jsr:@std/path@~1.0.2";
 import { extractYaml } from "jsr:@std/front-matter@~1.0.0";
