@@ -40,8 +40,8 @@ EXAMPLES                                        *ddu-source-zenn_dev-examples*
 	call ddu#start({
 	    \     'sources': [{
 	    \         'name': 'zenn_dev_article',
-	    \         'params': {
-	    \             'cwd': getcwd(),
+	    \         'options': {
+	    \             'path': getcwd(),
 	    \         }
 	    \     }],
 	    \     'kindOptions': {
