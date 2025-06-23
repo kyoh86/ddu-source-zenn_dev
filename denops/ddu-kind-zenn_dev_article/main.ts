@@ -1,4 +1,4 @@
-import type { Denops } from "jsr:@denops/std@~7.5.0";
+import type { Denops } from "jsr:@denops/std@~7.6.0";
 import { ensure, is, maybe } from "jsr:@core/unknownutil@~4.3.0";
 import { systemopen } from "jsr:@lambdalisue/systemopen@~1.0.0";
 
