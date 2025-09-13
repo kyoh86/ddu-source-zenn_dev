@@ -1,9 +1,9 @@
 import {
   type ActionArguments,
   ActionFlags,
-} from "jsr:@shougo/ddu-vim@~10.3.0/types";
-import { BaseKind } from "jsr:@shougo/ddu-vim@~10.3.0/kind";
-import { FileActions } from "jsr:@shougo/ddu-kind-file@~0.9.0";
+} from "jsr:@shougo/ddu-vim@~11.1.0/types";
+import { BaseKind } from "jsr:@shougo/ddu-vim@~11.1.0/kind";
+import { FileActions } from "jsr:@shougo/ddu-kind-file@~1.0.0";
 import { ensure, is, maybe } from "jsr:@core/unknownutil@~4.3.0";
 
 type Params = {
