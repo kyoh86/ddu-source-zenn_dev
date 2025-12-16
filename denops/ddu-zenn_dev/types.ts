@@ -1,4 +1,4 @@
-import type { ActionData as FileActionData } from "jsr:@shougo/ddu-kind-file@~1.0.0";
+import type { ActionData as FileActionData } from "@shougo/ddu-kind-file";
 
 export type Frontmatter = { title: string; emoji: string };
 export type PostAttribute =
