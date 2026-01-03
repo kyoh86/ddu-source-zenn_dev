@@ -1,23 +1,19 @@
+// $schema: https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json
 {
   "name": "@kyoh86/ddu-source-zenn_dev",
   "version": "0.0.0",
-  "exports": {},
   "description": "zenn.dev source for ddu.vim",
-  "fmt": { "include": ["denops/**/*.ts", "deno.jsonc"] },
-  "lint": { "include": ["denops/**/*.ts", "deno.jsonc"] },
-  "test": { "include": ["denops/**/*_test.ts"] },
+  "exports": {},
+  "lock": false,
+  "fmt": { "include": ["./**/*.ts", "deno.jsonc"] },
+  "lint": { "include": ["./**/*.ts", "deno.jsonc"] },
+  "test": { "include": ["./**/*_test.ts"] },
   "tasks": {
     "update": "deno outdated --update",
-    "fmt": "deno fmt",
-    "check": "deno check ./denops/**/*.ts",
-    "lint": "deno lint",
     "test": "deno test --check --permit-no-files --allow-env=DENOPS_TEST_CONNECT_TIMEOUT,DENOPS_TEST_DENOPS_PATH,DENOPS_TEST_VERBOSE,DENOPS_TEST_VIM_EXECUTABLE,DENOPS_TEST_NVIM_EXECUTABLE,MSGPACKR_NATIVE_ACCELERATION_DISABLED --allow-run=vim,nvim --allow-net=127.0.0.1:0 --allow-read"
   },
-  "lock": false,
   "workspace": [
-    "./denops/ddu-zenn_dev",
     "./denops/@ddu-sources",
-    "./denops/ddu-kind-zenn_dev_article",
     "./denops/@ddu-columns",
     "./denops/@ddu-kinds"
   ],
