@@ -7,7 +7,7 @@ import { basename } from "@std/path";
 import { extractYaml } from "@std/front-matter";
 import { abortable } from "@std/async";
 import { treePath2Filename } from "@shougo/ddu-vim/utils";
-import type { ActionData, Frontmatter } from "../ddu-zenn_dev/types.ts";
+import type { ActionData, Frontmatter } from "../../ddu-zenn_dev/types.ts";
 
 type Params = {
   urlPrefix: string;
