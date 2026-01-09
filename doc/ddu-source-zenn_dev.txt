@@ -5,7 +5,8 @@ License: MIT License
 
 
 ==============================================================================
-CONTENTS                                        *ddu-source-zenn_dev-contents*
+Contents~
+                                                *ddu-source-zenn_dev-contents*
 
 Introduction                                 |ddu-source-zenn_dev-introdution|
 Install                                      |ddu-source-zenn_dev-install|
@@ -16,13 +17,15 @@ About                                        |ddu-source-zenn_dev-about|
 
 
 ==============================================================================
-INTRODUCTION                                 *ddu-source-zenn_dev-introdution*
+Introduction~
+                                             *ddu-source-zenn_dev-introdution*
 
 ddu.vim source collects articles in the repository for zenn.dev.
 
 
 ==============================================================================
-INSTALL                                          *ddu-source-zenn_dev-install*
+Install~
+                                                 *ddu-source-zenn_dev-install*
 
 It depends on "zenn-cli", "|ddu|.vim", "|denops.vim|" and "|ddu-kind-file|".
 
@@ -33,7 +36,8 @@ https://github.com/Shougo/ddu-kind-file
 
 
 ==============================================================================
-EXAMPLES                                        *ddu-source-zenn_dev-examples*
+Examples~
+                                                *ddu-source-zenn_dev-examples*
 
 >
 	" Use zenn.dev articles source.
@@ -68,7 +72,8 @@ EXAMPLES                                        *ddu-source-zenn_dev-examples*
 
 
 ==============================================================================
-PARAMS                                            *ddu-source-zenn_dev-params*
+Params~
+                                                  *ddu-source-zenn_dev-params*
 
 urlPrefix
 	(string)
@@ -85,7 +90,8 @@ slug
 
 
 ==============================================================================
-COLUMNS                                          *ddu-source-zenn_dev-columns*
+Columns~
+                                                 *ddu-source-zenn_dev-columns*
 
 zenn_dev_emoji
 	Shows Emoji of articles.
@@ -98,7 +104,8 @@ zenn_dev_title
 
 
 ==============================================================================
-COLUMN PARAMS                              *ddu-source-zenn_dev-column-params*
+Column Params~
+                                           *ddu-source-zenn_dev-column-params*
 
 limitLength
 	(number)
@@ -107,7 +114,37 @@ limitLength
 	Default: 0
 
 ==============================================================================
-ACTIONS                                          *ddu-source-zenn_dev-actions*
+Action data~
+                                             *ddu-source-zenn_dev-action-data*
+
+Sources in this plugin are generating items with action data like below.
+
+Article source:
+
+	path
+		File path for the article.
+
+	date
+		Date for the file staged on git.
+	
+	url
+		The URL for the article under the localhost (preview).
+
+	(Front matters)
+		If you set some front-matter for the article, they will be
+		expanded here  For example: >
+		---
+		title: "Le Petit Prince"
+		emoji: "🐼"
+		type: "tech"
+		---
+<
+		they will beexpanded as fields.
+
+
+==============================================================================
+Actions~
+                                                 *ddu-source-zenn_dev-actions*
 
 This source uses |ddu-kind-file| actions.
 You can see their actions in |ddu-kind-file-actions|.
